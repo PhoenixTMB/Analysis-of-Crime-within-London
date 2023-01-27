@@ -1,0 +1,13 @@
+Crime,Westminster,Brent,Hillingdon,Kingston Upon Thames,Merton,Newham,Redbridge,Richmond Upon Thames,Sutton,Waltham Forest
+bicycle-theft,17,17,21,28,32,32,17,69,7,40
+burglary,24,211,99,34,110,109,92,122,94,97
+criminal-damage-arson,22,291,106,46,80,149,88,96,72,103
+drugs,27,109,59,84,50,165,119,38,41,104
+other-crime,8,52,133,15,25,32,24,23,16,30
+other-theft,173,356,301,112,163,319,174,168,108,214
+public-order,32,343,90,46,79,89,76,80,57,116
+robbery,10,81,31,8,74,46,31,24,37,39
+shoplifting,70,196,83,35,59,125,64,71,69,66
+theft-from-the-person,127,62,35,22,30,177,56,27,17,51
+vehicle-crime,4,392,408,96,189,437,406,225,194,371
+violent-crime,109,1068,452,181,408,508,405,323,306,516
