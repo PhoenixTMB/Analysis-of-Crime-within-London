@@ -37,7 +37,7 @@ This wasn’t a very easy form to work with so using our knowledge of pandas and
 
 We did this for each borough using the respective link we had created and merged the data frames since they all had the same index creating the whole dataset:
 
-![Complete Data Set](https://github.com/PhoenixTMB/Analysis-of-Crime-within-London/blob/main/Images/Picture%303.png)
+![Complete Data Set](https://github.com/PhoenixTMB/Analysis-of-Crime-within-London/blob/main/Images/Picture%203.png)
 
 > (Note: This is just a snapshot of the Data Frame – the real dataset is a lot larger)
 
