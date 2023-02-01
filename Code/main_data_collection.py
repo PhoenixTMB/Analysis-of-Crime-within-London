@@ -81,13 +81,13 @@ sutton_resp = requests.get(sutton_base_url)
 waltham_forest_base_url = 'https://data.police.uk/api/outcomes-at-location?poly=51.64641,0.01212:51.63739,0.023983:51.61730,0.014134:51.61177,0.020231:51.59546,0.010851:51.56690,0.018824:51.55494,0.019293:51.55290,-0.01728:51.56252,-0.04777:51.58001,-0.06231:51.61090,-0.03370:51.64641,-0.01212'
 waltham_forest_resp = requests.get(waltham_forest_base_url)
 
-
+greenwich_base_url = 'https://data.police.uk/api/outcomes-at-location?poly=51.50724,0.00201:51.51301,0.12045:51.47710,0.12354:51.46833,0.08372:51.44266,0.08887:51.42511,0.06209:51.44330,0.01608:51.46534,0.00819:51.47240,0.01574:51.47069,-0.01961:51.48651,-0.02682:51.49100,-0.00039:51.50724,0.00201'
 
 #-------------------------------------------------
 
 #for the purpose of the loop i compiled all the urls into a list along with all the names in the same order
-urls = [westminster_base_url, city_base_url, ken_chel_base_url, ham_ful_base_url, wandsworth_base_url, lambeth_base_url, southwark_base_url, tow_ham_base_url, hackney_base_url, islington_base_url, camden_base_url, ealing_base_url, hounslow_base_url, bromley_base_url, croydon_base_url, lewisham_base_url, bexley_base_url,  havering_base_url, bark_dag_base_url, enfield_base_url, barnet_base_url, haringey_base_url, harrow_base_url, brent_base_url, hillingdon_base_url, kingston_upon_thames_base_url, merton_base_url, newham_base_url, redbridge_base_url, richmond_upon_thames_base_url, sutton_base_url, waltham_forest_base_url]
-names = ['Westminster', 'City of London', 'Kensington and Chelsea', 'Hammersmith and Fulham', 'Wandsworth', 'Lambeth', 'Southwark', 'Tower Hamlets', 'Hackney', 'Islington', 'Camden', 'Ealing', 'Hounslow', 'Bromley', 'Croydon', 'Lewisham', 'Bexley', 'Havering', 'Barking and Dagenham', 'Enfield', 'Barnet', 'Haringey', 'Harrow', 'Brent', 'Hillingdon', 'Kingston Upon Thames', 'Merton', 'Newham', 'Redbridge', 'Richmond Upon Thames', 'Sutton', 'Waltham Forest']
+urls = [westminster_base_url, city_base_url, ken_chel_base_url, ham_ful_base_url, wandsworth_base_url, lambeth_base_url, southwark_base_url, tow_ham_base_url, hackney_base_url, islington_base_url, camden_base_url, ealing_base_url, hounslow_base_url, bromley_base_url, croydon_base_url, lewisham_base_url, bexley_base_url,  havering_base_url, bark_dag_base_url, enfield_base_url, barnet_base_url, haringey_base_url, harrow_base_url, brent_base_url, hillingdon_base_url, kingston_upon_thames_base_url, merton_base_url, newham_base_url, redbridge_base_url, richmond_upon_thames_base_url, sutton_base_url, waltham_forest_base_url, greenwich_base_url]
+names = ['Westminster', 'City of London', 'Kensington and Chelsea', 'Hammersmith and Fulham', 'Wandsworth', 'Lambeth', 'Southwark', 'Tower Hamlets', 'Hackney', 'Islington', 'Camden', 'Ealing', 'Hounslow', 'Bromley', 'Croydon', 'Lewisham', 'Bexley', 'Havering', 'Barking and Dagenham', 'Enfield', 'Barnet', 'Haringey', 'Harrow', 'Brent', 'Hillingdon', 'Kingston Upon Thames', 'Merton', 'Newham', 'Redbridge', 'Richmond Upon Thames', 'Sutton', 'Waltham Forest', 'Greenwich']
 
 #this is for when i was testing iterating over the responses
 responses = [westminster_resp, brent_resp, hillingdon_resp, kingston_upon_thames_resp, merton_resp, newham_resp, richmond_upon_thames_resp, sutton_resp, waltham_forest_resp] 
