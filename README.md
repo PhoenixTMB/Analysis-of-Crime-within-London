@@ -29,23 +29,16 @@ The first step we had to take in collecting the data for this project was going 
 
 This process was extremely time-consuming as we had to collect these coordinates manually which became the largest challenge at the start of the project. What contributed to the time commitment of this process was that each coordinate had to be formatted in a specific way to fit the documentation of the API and for accuracy, we aimed for at least 15-20 points to capture the best shape of the borough. Once this step was complete and the links were made, the next step was converting the output to a JSON file and inputting the parameters we required, more specifically, the ‘Crime’ and ‘Category’ parameters which resulted in the following data frame. This is an example for Westminster:
 
-![Initial Data Frame](https://github.com/PhoenixTMB/Analysis-of-Crime-within-London/blob/main/Images/first_dframe.png)
+<p align="center">
+    <img src="https://github.com/PhoenixTMB/Analysis-of-Crime-within-London/blob/main/Images/first_dframe.png">
+</p>
 
 This wasn’t a very easy form to work with so using our knowledge of pandas and data wrangling we managed to get each Data frame in the following form:
-
-![Wrangled Data Frame](https://github.com/PhoenixTMB/Analysis-of-Crime-within-London/blob/main/Images/Picture%202.png)
-
+<p align='center'>
+    <img src = 'https://github.com/PhoenixTMB/Analysis-of-Crime-within-London/blob/main/Images/Picture%202.png'>
+<p>
 We did this for each borough using the respective link we had created and merged the data frames since they all had the same index creating the whole dataset:
-
-![Complete Data Set](https://github.com/PhoenixTMB/Analysis-of-Crime-within-London/blob/main/Images/Picture%203.png)
-
+<p align='center'>
+    <img src ='https://github.com/PhoenixTMB/Analysis-of-Crime-within-London/blob/main/Images/Picture%303.png'>
+<p>
 > (Note: This is just a snapshot of the Data Frame – the real dataset is a lot larger)
-
-This provided us with the base to get started on our analysis and visualisations since each row and column can be easily isolated and retrieved individually. 
-
-For aggregate statistics, we simply counted all the responses in the JSON file since this was equal to the number of crimes that it outputted which resulted in a list of total crimes per borough ordered by the order of the list of URLs in the source code. Creating the subsequent data frame was therefore easy and more efficient than manipulating the above dataset.
-
-### Main Challenges
-
-1.	Formatting the coordinates – as aforementioned we had to format the coordinates for the Met Police API but on top of this because we wanted to produce a heatmap which used the Geoplot package which required different formatting of the coordinates. This caused significant delays but was relatively easy to overcome.
-2.	Accuracy – as we used a polygon to surround the area of the borough this caused a problem in terms of accuracy since the borough boundaries are not perfect boxes or regular polygons. Taking this into account we tried the best we could under a time constraint and wanted to focus more of our efforts on generating insights and visualisations. 
