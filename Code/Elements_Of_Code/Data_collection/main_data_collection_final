@@ -4,6 +4,7 @@ import time
 import numpy as np
 import json
 
+
 #these are all the links we created for all 32 boroughs
 city_base_url = 'https://data.police.uk/api/outcomes-at-location?poly=51.51103,-0.11272:51.50793,-0.07950:51.51023,-0.07727:51.51023,-0.07264:51.51429,-0.07427:51.51894,-0.07805:51.52161,-0.07856:51.52187,-0.08096:51.52016,-0.08534:51.51894,-0.08629:51.52000,-0.09006:51.52075,-0.08980:51.52166,-0.09410:51.52310,-0.09495:51.52348,-0.09684:51.52289,-0.09804:51.52086,-0.09787:51.51781,-0.10766:51.51824,-0.11367:51.51103,-0.11272'
 
@@ -50,9 +51,9 @@ barnet_base_url = 'https://data.police.uk/api/outcomes-at-location?poly=51.63450
 haringey_base_url = 'https://data.police.uk/api/outcomes-at-location?poly=51.60576,-0.04151:51.61123,-0.13505:51.59754,-0.15170:51.60515,-0.15660:51.57254,-0.17186:51.57505,-0.12033:51.56558,-0.10510:51.57811,-0.06119:51.58797,-0.05267:51.59762,-0.04950:51.60576,-0.04151'
 
 harrow_base_url = 'https://data.police.uk/api/outcomes-at-location?poly=51.64066,-0.31255:51.61292,-0.40555:51.55343,-0.37637:51.55797,-0.33626:51.57101,-0.32440:51.57837,-0.32531:51.58630,-0.28428:51.59480,-0.28975:51.60103,-0.26787:51.64066,-0.31255'
-#initailly i started my defining the response but i then just internalised this in the API loop
+
 westminster_base_url = 'https://data.police.uk/api/outcomes-at-location?poly=51.51106,-0.11169:51.51293,-0.11255:51.51373,-0.11195:51.51378,-0.11118:51.51581,-0.11203:51.51800,-0.11366:51.51827,-0.11152:51.51784,-0.10817:51.52073,-0.09779:51.52222,-0.09736:51.52286,-0.09804:51.52340,-0.09676:51.52324,-0.09684:51.52281,-0.09650:51.52313,-0.09513:51.52139,-0.09324:51.52110,-0.09226:51.52060,-0.08967:51.52003,-0.09013:51.51881,-0.08645:51.52039,-0.08518:51.51974,-0.08311:51.52192,-0.08127:51.52157,-0.07868:51.51892,-0.07949:51.51892,-0.07822:51.51663,-0.07736:51.51412,-0.07368:51.51018,-0.07264:51.50979,-0.07558:51.51036,-0.07667:51.50936,-0.07863:51.50782,-0.07949:51.51106,-0.11169'
-westminster_resp = requests.get(westminster_base_url)
+
 
 brent_base_url = 'https://data.police.uk/api/outcomes-at-location?poly=51.51343,0.11806:51.47695,0.12388:51.47885,0.11819:51.47334,0.11184:51.47538,0.09835:51.46666,0.08258:51.45994,0.08274:51.45942,0.07864:51.44563,0.08642:51.41334,0.11203:51.40910,0.15300:51.44335,0.17228:51.48208,0.22360:51.48509,0.18553:51.50819,0.16312:51.51044,0.14746:51.51568,0.12674:51.51343,0.11806'
 brent_resp = requests.get(brent_base_url)
@@ -62,6 +63,7 @@ hillingdon_resp = requests.get(hillingdon_base_url)
 
 kingston_upon_thames_base_url = 'https://data.police.uk/api/outcomes-at-location?poly=51.32637,-0.32882:51.35145,-0.29392:51.37942,-0.26017:51.38051,-0.24679:51.38704,-0.24039:51.39793,-0.24679:51.43675,-0.25668:51.42116,-0.28635:51.43349,-0.31311:51.42696,-0.31369:51.42007,-0.30730:51.37796,-0.30904:51.32819,-0.33057:51.32637,-0.32882'
 kingston_upon_thames_resp = requests.get(kingston_upon_thames_base_url)
+
 
 merton_base_url = 'https://data.police.uk/api/outcomes-at-location?poly=51.43094,-0.25458:51.44103,-0.19104:51.42571,-0.18324:51.42010,-0.16166:51.41748,-0.14488:51.41786,-0.14428:51.41075,-0.12989:51.39692,-0.12629:51.38794,-0.21082:51.39654,-0.24739:51.41412,-0.25098:51.43094,-0.25458'
 merton_resp = requests.get(merton_base_url)
@@ -81,14 +83,12 @@ sutton_resp = requests.get(sutton_base_url)
 waltham_forest_base_url = 'https://data.police.uk/api/outcomes-at-location?poly=51.64641,0.01212:51.63739,0.023983:51.61730,0.014134:51.61177,0.020231:51.59546,0.010851:51.56690,0.018824:51.55494,0.019293:51.55290,-0.01728:51.56252,-0.04777:51.58001,-0.06231:51.61090,-0.03370:51.64641,-0.01212'
 waltham_forest_resp = requests.get(waltham_forest_base_url)
 
-
-
 #-------------------------------------------------
 
 #for the purpose of the loop i compiled all the urls into a list along with all the names in the same order
-urls = [westminster_base_url, city_base_url, ken_chel_base_url, ham_ful_base_url, wandsworth_base_url, lambeth_base_url, southwark_base_url, tow_ham_base_url, hackney_base_url, islington_base_url, camden_base_url, ealing_base_url, hounslow_base_url, bromley_base_url, croydon_base_url, lewisham_base_url, bexley_base_url,  havering_base_url, bark_dag_base_url, enfield_base_url, barnet_base_url, haringey_base_url, harrow_base_url, brent_base_url, hillingdon_base_url, kingston_upon_thames_base_url, merton_base_url, newham_base_url, redbridge_base_url, richmond_upon_thames_base_url, sutton_base_url, waltham_forest_base_url]
-names = ['Westminster', 'City of London', 'Kensington and Chelsea', 'Hammersmith and Fulham', 'Wandsworth', 'Lambeth', 'Southwark', 'Tower Hamlets', 'Hackney', 'Islington', 'Camden', 'Ealing', 'Hounslow', 'Bromley', 'Croydon', 'Lewisham', 'Bexley', 'Havering', 'Barking and Dagenham', 'Enfield', 'Barnet', 'Haringey', 'Harrow', 'Brent', 'Hillingdon', 'Kingston Upon Thames', 'Merton', 'Newham', 'Redbridge', 'Richmond Upon Thames', 'Sutton', 'Waltham Forest']
-
+urls = [westminster_base_url, city_base_url, ken_chel_base_url, ham_ful_base_url, wandsworth_base_url, lambeth_base_url, southwark_base_url, tow_ham_base_url, hackney_base_url, islington_base_url, camden_base_url, ealing_base_url, hounslow_base_url, bromley_base_url, croydon_base_url, lewisham_base_url, bexley_base_url, greenwich_base_url,   havering_base_url, bark_dag_base_url, enfield_base_url, barnet_base_url, haringey_base_url, harrow_base_url, brent_base_url, hillingdon_base_url, kingston_upon_thames_base_url, merton_base_url, newham_base_url, redbridge_base_url, richmond_upon_thames_base_url, sutton_base_url, waltham_forest_base_url]
+names = ['Westminster', 'City of London', 'Kensington and Chelsea', 'Hammersmith and Fulham', 'Wandsworth', 'Lambeth', 'Southwark', 'Tower Hamlets', 'Hackney', 'Islington', 'Camden', 'Ealing', 'Hounslow', 'Bromley', 'Croydon', 'Lewisham', 'Bexley', 'Greenwich', 'Havering', 'Barking and Dagenham', 'Enfield', 'Barnet', 'Haringey', 'Harrow', 'Brent', 'Hillingdon', 'Kingston upon Thames', 'Merton', 'Newham', 'Redbridge', 'Richmond upon Thames', 'Sutton', 'Waltham Forest']
+westminster_resp = requests.get(westminster_base_url)
 #this is for when i was testing iterating over the responses
 responses = [westminster_resp, brent_resp, hillingdon_resp, kingston_upon_thames_resp, merton_resp, newham_resp, richmond_upon_thames_resp, sutton_resp, waltham_forest_resp] 
 #i set up the main dataframe by collecting the data for Westminster 
@@ -98,33 +98,29 @@ n_westminster = len(westminster_json)
 
 crime_westminster = []
 
-
 for i in range(0,n_westminster):
   crime_name = westminster_json[i]['crime']['category']
   crime_westminster.append(crime_name)
 maindf = pd.DataFrame({'Crime':crime_westminster, str(names[0]): 1})
 maindf = pd.pivot_table(maindf, index=['Crime'],values=[str(names[0])],aggfunc='sum')
+maindf.loc['Total crime']= maindf.sum()
+maindf.loc['Borough'] = names[0]
 print(maindf)
-
-#--------------------------------------------------
-
-#testing for Response 200 - wesite error meant we would get random 500 responses each time which would disrupt the loop
-for url in urls:
-  resp_check = requests.get(url)
-  print(resp_check)
-
-
-  p = len(urls)
+print("!")
+#Added a try except loop in the while loop as sometimes the api does not respond the first response
+p = len(urls)
+Totalcrimelist= [] 
 k=1
 while k <= p-1:
-  print(k)
-  resp = requests.get(urls[k])
-  fails = []
-  try:
-    resp_json = resp.json()
-    
+  resp = None
+  while resp is None:   
+    try:
+      resp = requests.get(urls[k])
+      resp_json = resp.json()
+    except:
+      pass
+     
     crime = []
-
     m = len(resp_json)
     print (m)
     for g in range(0, m):
@@ -132,17 +128,20 @@ while k <= p-1:
       crime.append(crime_name)
     df = pd.DataFrame({'Crime':crime, names[k]: 1})
     df = pd.pivot_table(df, index=['Crime'],values=[names[k]],aggfunc='sum')
-    print (df)
+    df.loc['Total crime']= df.sum()
+    df.loc['Borough'] = names[k]
     maindf = maindf.join(df)
-    
     k= k+1
   
-  except:
-    j=k-1
-    fails.append(j)
 
-print(maindf)
-print(fails)
-main_csv = maindf.to_csv('main_data.csv')
+#Creating a list of total crimes from maindf to be appended to df2 (No longer necessary but keeping)
+v=int(0)
+TCF= []
+while v<33:
+  crimei=maindf.values[14][v]
+  TCF.append(crimei)
+  v=v+1
 
-#used the try and except syntax to work around the random dataframe and joined the resulting dataframe onto the main as they had the same index
+#Fixing Dataframe creating a random column full of nothing
+maindfs=maindf.drop("")
+main_csv = maindfs.to_csv('main_data.csv')
