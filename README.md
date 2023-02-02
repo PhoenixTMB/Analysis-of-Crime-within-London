@@ -48,6 +48,12 @@ This provided us with the base to get started on our analysis and visualisations
 
 For aggregate statistics, we simply counted all the responses in the JSON file since this was equal to the number of crimes that it outputted which resulted in a list of total crimes per borough ordered by the order of the list of URLs in the source code. Creating the subsequent data frame was therefore easy and more efficient than manipulating the above dataset.
 
+For the data we used in the correlation analysis, these we static data sets we found online for each borough and compiled into one large Data Frame in order to use when creating the correlation heatmaps and scatter plot. The full csv file can be found in the repository but in followed the same format as the aggregate crime data frame:
+
+<p align='center'>
+    <img src ='https://github.com/PhoenixTMB/Analysis-of-Crime-within-London/blob/main/Images/Other_Images/Screenshot%202023-02-02%20at%2016.49.57.png'>
+<p>
+ 
 ### Main Challenges
 
 1.	Formatting the coordinates – as aforementioned we had to format the coordinates for the Met Police API but on top of this because we wanted to produce a heatmap which used the Geoplot package which required different formatting of the coordinates. This caused significant delays but was relatively easy to overcome.
