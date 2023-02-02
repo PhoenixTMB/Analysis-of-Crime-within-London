@@ -30,16 +30,49 @@ The first step we had to take in collecting the data for this project was going 
 This process was extremely time-consuming as we had to collect these coordinates manually which became the largest challenge at the start of the project. What contributed to the time commitment of this process was that each coordinate had to be formatted in a specific way to fit the documentation of the API and for accuracy, we aimed for at least 15-20 points to capture the best shape of the borough. Once this step was complete and the links were made, the next step was converting the output to a JSON file and inputting the parameters we required, more specifically, the ‘Crime’ and ‘Category’ parameters which resulted in the following data frame. This is an example for Westminster:
 
 <p align="center">
-    <img src="https://github.com/PhoenixTMB/Analysis-of-Crime-within-London/blob/main/Images/first_dframe.png">
+    <img src="https://github.com/PhoenixTMB/Analysis-of-Crime-within-London/blob/main/Images/Other_Images/EDA_example1.png">
 </p>
 
 This wasn’t a very easy form to work with so using our knowledge of pandas and data wrangling we managed to get each Data frame in the following form:
 <p align='center'>
-    <img src = 'https://github.com/PhoenixTMB/Analysis-of-Crime-within-London/blob/main/Images/Picture%202.png'>
+    <img src = 'https://github.com/PhoenixTMB/Analysis-of-Crime-within-London/blob/main/Images/Other_Images/EDA_example2.png'>
 <p>
 We did this for each borough using the respective link we had created and merged the data frames since they all had the same index creating the whole dataset:
 <p align='center'>
-    <img src ='https://github.com/PhoenixTMB/Analysis-of-Crime-within-London/blob/main/Images/Picture%203.png'>
+    <img src ='https://github.com/PhoenixTMB/Analysis-of-Crime-within-London/blob/main/Images/Other_Images/dataset_snapshot.png' width = 800 height = 300>
 <p>
 
- >Note: This is just a snapshot of the Data Frame – the real dataset is a lot larger
+>Note: This is just a snapshot of the Data Frame – the real dataset is a lot larger
+
+This provided us with the base to get started on our analysis and visualisations since each row and column can be easily isolated and retrieved individually. 
+
+For aggregate statistics, we simply counted all the responses in the JSON file since this was equal to the number of crimes that it outputted which resulted in a list of total crimes per borough ordered by the order of the list of URLs in the source code. Creating the subsequent data frame was therefore easy and more efficient than manipulating the above dataset.
+
+### Main Challenges
+
+1.	Formatting the coordinates – as aforementioned we had to format the coordinates for the Met Police API but on top of this because we wanted to produce a heatmap which used the Geoplot package which required different formatting of the coordinates. This caused significant delays but was relatively easy to overcome.
+2.	Accuracy – as we used a polygon to surround the area of the borough this caused a problem in terms of accuracy since the borough boundaries are not perfect boxes or regular polygons. Taking this into account we tried the best we could under a time constraint and wanted to focus more of our efforts on generating insights and visualisations. 
+
+
+## Exploratory Data Analysis
+
+Our main data set contains all the crimes divided into each category used by the API as shown above for each Borough. This dataset is relatively easy to read but is difficult to visualise as any viewer would struggle to paint the full picture for each borough and each crime category from just this. As previously mentioned, our data set for just the crime contained just under 74,000 data points for all 33 Boroughs, broken down into 13 categories. 
+
+The values of which ranged from 1 weapon possession in Harrow, to 1173 violent crimes in Greenwich. But to gauge the data from a more “macro” perspective we decided to explore the aggregate data for all 33 boroughs instead of completing plots for the crime categories since we thought the best way to explore this data would be through visualising using a heat map. So, focusing on the aggregate statistics, we created this ordered bar graph to show the number of crimes per borough in one month:
+
+<p align="center">
+    <img src="https://github.com/PhoenixTMB/Analysis-of-Crime-within-London/blob/main/Images/Other_Plots/agg_plot.png" width = '400' height = 400>
+</p>
+
+Alongside this, we wanted concrete summary statistics which we gained using the describe() function in python to get the following:
+
+>- count - 33
+>- mean - 2337.515152
+>- std - 1006.027433
+>- min - 590
+>- 25% - 1724
+>- 50% - 2120
+>- 75% - 3077
+>- max - 4326
+
+From this we can see that there is huge variation in. the number of crimes but with the majority in the 1500 to 3000 range. This is likewise demonstrated by the standard deviation of 1006 with values taking a range of 3736. For the other relevant variables broken down by crime category, the distribution will be shown in the heat maps below.
