@@ -29,3 +29,10 @@ p = (ggplot(borough_count, aes(x='Borough_', y = 'Number of Crimes_'))
     +coord_flip()
     +labs(title = 'Crimes per London Borough December 2022', x= 'Borough', y='Number of Crimes'))
 p.save(filename = 'agg_plot.png', height=15, width=15, dpi=1000)
+
+p2 = (
+    ggplot(df_new, aes(y='Number of Crimes_',x=0))
+    + geom_boxplot(colour="rebeccapurple", fill="lightskyblue")
+    
+)
+p2.save(filename = 'agg_boxplot.png', height=15, width=15, dpi=300)
