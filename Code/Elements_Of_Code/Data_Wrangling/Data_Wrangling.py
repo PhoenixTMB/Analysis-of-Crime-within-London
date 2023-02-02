@@ -1,3 +1,8 @@
+#importing libraries
+#code is designed to run in colab
+#1 file is required to run this code
+#found in: CSV files -> Hard-Coded_CSVs -> 1.csv
+
 import requests
 import pandas as pd
 import time

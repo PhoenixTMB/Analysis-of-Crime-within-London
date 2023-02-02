@@ -1,5 +1,7 @@
 #These plots have been set up to run in colab as can be seen in line 11
 #Importing libraries
+#1 file is required to run this code
+#found in: CSV files -> Hard-Coded_CSVs -> 1.csv
 import requests
 import pandas as pd
 import time
@@ -12,6 +14,26 @@ import matplotlib.pyplot as plt
 pio.renderers.default = 'colab'
 import plotnine
 from plotnine import *
+
+
+                #Setting up for choropleth maps
+#----------------------------------------------------------------------------------------------------------------------------
+
+#Create Dictionary for Mapping
+map_boroughs = {}
+#Open geojson file with borough boundaries
+boundaries = json.load(open('2.json', 'r'))
+
+#Create dictionary for mapping part 2
+for feature in boundaries['features']: 
+  feature['id']=feature['properties']['id']
+  map_boroughs[feature['properties']['name']]=feature['id']
+
+#Creatinga dataframe column which applies the area IDs to the relative areas
+df3['id'] = df3['Borough'].apply(lambda x:map_boroughs[(x)])
+
+
+       #PLOTS - Choropleth maps
 #Showing total crime in each borough 
 def figure1():
           fig1 = px.choropleth(df3,

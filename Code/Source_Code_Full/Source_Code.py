@@ -1,3 +1,8 @@
+#importing libraries
+#code is designed to run in colab as seen in line 11
+#2 files are required to run this code
+#File number one is 2.json found in: Co-ordinates -> GeoJson_for_choroplethmaps -> 2.json
+#File number two is 1.csv found in: CSV files -> Hard-Coded_CSVs -> 1.csv
 import requests
 import pandas as pd
 import time
