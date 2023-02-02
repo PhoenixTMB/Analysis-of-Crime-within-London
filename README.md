@@ -78,7 +78,7 @@ Alongside this, we wanted concrete summary statistics which we gained using the 
 We can visualise this through a box plot:
 
 <p align="center">
-    <img src="https://github.com/PhoenixTMB/Analysis-of-Crime-within-London/blob/main/Images/Other_Plots/agg_boxplot.png" width = '400' height = 400>
+    <img src="https://github.com/PhoenixTMB/Analysis-of-Crime-within-London/blob/main/Images/Other_Plots/agg_boxplot.png" width = 600 height = 600>
 </p>
 
 From this we can see that there is huge variation in. the number of crimes but with the majority in the 1500 to 3000 range. This is likewise demonstrated by the standard deviation of 1006 with values taking a range of 3736. For the other relevant variables broken down by crime category, the distribution will be shown in the heat maps below.
