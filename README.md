@@ -39,7 +39,7 @@ This wasn’t a very easy form to work with so using our knowledge of pandas and
 <p>
 We did this for each borough using the respective link we had created and merged the data frames since they all had the same index creating the whole dataset:
 <p align='center'>
-    <img src ='https://github.com/PhoenixTMB/Analysis-of-Crime-within-London/blob/main/Images/Other_Images/dataset_snapshot.png' width = 800 height = 300>
+    <img src ='https://github.com/PhoenixTMB/Analysis-of-Crime-within-London/blob/main/Images/Other_Images/dataset_snapshot.png' width = 800 height = 250>
 <p>
 
 >Note: This is just a snapshot of the Data Frame – the real dataset is a lot larger
@@ -61,7 +61,7 @@ Our main data set contains all the crimes divided into each category used by the
 The values of which ranged from 1 weapon possession in Harrow, to 1173 violent crimes in Greenwich. But to gauge the data from a more “macro” perspective we decided to explore the aggregate data for all 33 boroughs instead of completing plots for the crime categories since we thought the best way to explore this data would be through visualising using a heat map. So, focusing on the aggregate statistics, we created this ordered bar graph to show the number of crimes per borough in one month:
 
 <p align="center">
-    <img src="https://github.com/PhoenixTMB/Analysis-of-Crime-within-London/blob/main/Images/Other_Plots/agg_plot.png" width = '400' height = 400>
+    <img src="https://github.com/PhoenixTMB/Analysis-of-Crime-within-London/blob/main/Images/Other_Plots/agg_plot.png" width = 800 height = 800>
 </p>
 
 Alongside this, we wanted concrete summary statistics which we gained using the describe() function in python to get the following:
