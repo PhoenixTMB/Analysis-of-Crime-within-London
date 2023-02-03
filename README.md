@@ -3,9 +3,9 @@ A detailed investigation into the distribution of crime and crime sub-categories
 # Exploring Crime Distribution in London:
 
 ## Executive Summary:
-The focus of this project was to investigate the distribution of crime across London and more specifically across the 32 inner and outer boroughs of London to see which areas and therefore residents are most likely to experience certain crimes in their area. Our initial framing for this project was to help students like us, navigate an unfamiliar landscape but also for potential investors setting up offices or for families buying properties to be fully aware of the area they are buying into. Especially as property prices continue to rise relentlessly, it is becoming increasingly difficult to judge the quality of the area through property prices alone, so we hope our visualisation can paint the full picture. Crime in London in becoming increasing topical since the rise of knife crime and other violent crime since the beginning of the last decade. We ultimately hope our project can help increase awareness of crime prone areas and thus increase people’s safety.   
+The focus of this project was to investigate the distribution of crime across London and more specifically across the 32 inner and outer boroughs of London to see which areas and therefore residents are most likely to experience certain crimes in their area. Our initial framing for this project was to help students like us, navigate an unfamiliar landscape but also for potential investors setting up offices or for families buying properties to be fully aware of the area they are buying into. Especially as property prices continue to rise relentlessly, it is becoming increasingly difficult to judge the quality of the area through property prices alone, so we hope our visualisation can paint the full picture. Crime in London is becoming increasingly topical since the rise of knife crime and other violent crime since the beginning of the last decade. We ultimately hope our project can help increase awareness of crime prone areas and thus increase people’s safety.   
 
-For this project we collected 14 categories crime data from all 32 Boroughs using the London Metropolitan Police Crime API for 2021. Our resulting dataset contained just under 74,000 data points which we had to wrangle to make presentable using knowledge of pandas. Our exploratory analysis and visualisations provided both surprising and non-surprising insights we sought to rationalise through further research.
+For this project we collected 14 categories crime data from all 32 Boroughs + City of London using the London Metropolitan Police Crime API for 2021. Our resulting dataset contained just under 74,000 data points which we had to wrangle to make presentable using knowledge of pandas. Our exploratory analysis and visualisations provided both surprising and non-surprising insights we sought to rationalise through further research.
  
 ## Motivation
 
@@ -30,17 +30,17 @@ The first step we had to take in collecting the data for this project was going 
 This process was extremely time-consuming as we had to collect these coordinates manually which became the largest challenge at the start of the project. What contributed to the time commitment of this process was that each coordinate had to be formatted in a specific way to fit the documentation of the API and for accuracy, we aimed for at least 15-20 points to capture the best shape of the borough. Once this step was complete and the links were made, the next step was converting the output to a JSON file and inputting the parameters we required, more specifically, the ‘Crime’ and ‘Category’ parameters which resulted in the following data frame. This is an example for Westminster:
 
 <p align="center">
-    <img src="https://github.com/PhoenixTMB/Analysis-of-Crime-within-London/blob/main/Images\Other_Images\EDA_example1.png" width = 800 height = 250>
+    <img src="Images\Other_Images\EDA_example1.png" width = 800 height = 250>
 </p>
 
 This wasn’t a very easy form to work with so using our knowledge of pandas and data wrangling we managed to get each Data frame in the following form:
 <p align='center'>
-    <img src = 'https://github.com/PhoenixTMB/Analysis-of-Crime-within-London/blob/main/Images/Other_Images/EDA_example2.png' width = 800 height = 250>
-<p>
+    <img src = 'Images/Other_Images/EDA_example2.png' width = 800 height = 250>
+</p>
 We did this for each borough using the respective link we had created and merged the data frames since they all had the same index creating the whole dataset:
 <p align='center'>
-    <img src ='https://github.com/PhoenixTMB/Analysis-of-Crime-within-London/blob/main/Images/Other_Images/dataset_snapshot.png' width = 800 height = 250>
-<p>
+    <img src ='Images/Other_Images/dataset_snapshot.png' width = 800 height = 250>
+</p>
 
 >Note: This is just a snapshot of the Data Frame – the real dataset is a lot larger
 
@@ -61,7 +61,7 @@ Our main data set contains all the crimes divided into each category used by the
 The values of which ranged from 1 weapon possession in Harrow, to 1173 violent crimes in Greenwich. But to gauge the data from a more “macro” perspective we decided to explore the aggregate data for all 33 boroughs instead of completing plots for the crime categories since we thought the best way to explore this data would be through visualising using a heat map. So, focusing on the aggregate statistics, we created this ordered bar graph to show the number of crimes per borough in one month:
 
 <p align="center">
-    <img src="https://github.com/PhoenixTMB/Analysis-of-Crime-within-London/blob/main/Images/Other_Plots/agg_plot.png" width = 800 height = 800>
+    <img src="Images/Other_Plots/agg_plot.png" width = 800 height = 800>
 </p>
 
 Alongside this, we wanted concrete summary statistics which we gained using the describe() function in python to get the following summary stats for total crime across each borough:
@@ -110,7 +110,7 @@ From this we can see that there is huge variation in. the number of crimes but w
  In order to visualise the prevalence of crime in each borough, we decided to use a geographical visualisation called a choropleth map. Doing this meant finding a GEOJson file with the boundaries of the London boroughs. We then created identifiers for each borough which corresponded to their boundary co-ordinates within the GEOJson. To create this we used Plotly’s choropleth function and analysed the data to find a midpoint which would illustrate relatively safe areas (red) vs relatively dangerous areas (green). Below is an example of the heat map for total crime.
 
   <p align="center">
-    <img src="https://github.com/PhoenixTMB/Analysis-of-Crime-within-London/blob/main/Images\Choropleth\Website_Choros\TotalCrimeChoroFinal.jpg" width = 800 height = 800>
+    <img src="Images/Choropleth/Website_Choros/TotalCrimeChoroFinal.jpg" width = 800 height = 800>
  </p>
 
  >Note: An interactive example which displays borough names can be found by locating the output.html file in this repository with location: Images / Interactive_Map /output.html.
@@ -120,7 +120,7 @@ From this we can see that there is huge variation in. the number of crimes but w
  We would expect that as the population of a borough increases, ceteris paribus, the crime rate will increase. We therefore realised that we actually need to calculate the rate of each crime adjusting for population. To do this we used pandas to add columns to the dataframe “df3” with the rates of each crime. We then recreated the choropleth maps and got an interesting result.
 
   <p align="center">
-    <img src="https://github.com/PhoenixTMB/Analysis-of-Crime-within-London/blob/main/Images\Choropleth\Website_Choros\CrimeRateChoro.jpg" width = 800 height = 800>
+    <img src="Images/Choropleth/Website_Choros/CrimeRateChoro.jpg" width = 800 height = 800>
  </p>
 
  ### What can we conclude from choropleth maps
@@ -132,7 +132,7 @@ From this we can see that there is huge variation in. the number of crimes but w
  To analyse this we created a plot to demonstrate the relationship between the total number of crimes in a borough and the boroughs travel zone.
 
   <p align="center">
-    <img src="https://github.com/PhoenixTMB/Analysis-of-Crime-within-London/blob/main/Images\Other_Plots\Centricity\crimes_travel_zone_graph.jpeg" width = 800 height = 700>
+    <img src="Images/Other_Plots/Centricity/crimes_travel_zone_graph.jpeg" width = 800 height = 700>
  </p>
 
  As we can see there is actually no clear relationship found on this graph however, one confounding factor could be the relationship between population and centricity. Central areas such as City of London and City of Westminster have lower populations and therefore we would expect them to have a higher crime rate. However, if we were to look to crime rate as opposed to number of crimes, the data would likely tell a different story and this is an area for further exploration.
@@ -142,14 +142,14 @@ From this we can see that there is huge variation in. the number of crimes but w
  To visualise the relationships between different crimes and different socioeconomic factors, we merged the dataframe that we created “1.csv” (which contains information on demographics, incomes and house affordability) using Pandas. We used Plotnine to create the scatter graphs and here is an example of one of the graphs that we created. (Other graphs that we created did not show any clear relationship without enumeration of the degree of correlation).
 
   <p align="center">
-    <img src="https://github.com/PhoenixTMB/Analysis-of-Crime-within-London/blob/main/Images\Scatter_Plots\PlotlyScatterForWebsite.jpg" width = 800 height = 800>
+    <img src="Images/Scatter_Plots/PlotlyScatterForWebsite.jpg" width = 800 height = 800>
  </p>
 
  As you can see, there is a positive correlation between the two factors. As data scientists though, we wanted to enumerate this information. Initially using numpy to calculate the correlations between variables we realised that this code was unnecessarily bulky and used pandas to create a correlation matrix.
 
  ### Correlation Analysis
   <p align="center">
-    <img src="https://github.com/PhoenixTMB/Analysis-of-Crime-within-London/blob/main/Images\Other_Plots\Correlation\InitialCorrelationAnalysis.jpg" width = 800 height = 400>
+    <img src="Images/Other_Plots/Correlation/InitialCorrelationAnalysis.jpg" width = 800 height = 400>
  </p>
  
  >Note: This is just a snapshot of the Data Frame – the real dataset is a lot larger
@@ -157,7 +157,7 @@ From this we can see that there is huge variation in. the number of crimes but w
  To gain even further insight, we decided to create a correlation matrix heatmap using seaborn, and we discovered that out of the factors listed in the file 1.csv, the only factor that had predictive power over crimes committed was population as can be seen below.
 
   <p align="center">
-    <img src="https://github.com/PhoenixTMB/Analysis-of-Crime-within-London/blob/main/Images\Other_Plots\Correlation\TotalCrimeCorrelationFinal.jpg" width = 800 height = 800>
+    <img src="Images/Other_Plots/Correlation/TotalCrimeCorrelationFinal.jpg" width = 800 height = 800>
  </p>
 
  We were surprised by the lack of correlation between income and crime and we pondered why this was the case. We then checked our code for issues and found none. Except for one thing…
@@ -165,7 +165,7 @@ From this we can see that there is huge variation in. the number of crimes but w
  Yet again we realised that population is a clear confounding factor, so we remade the correlation matrix using the dataset with crime rates that we made for the choropleth maps and as you can see, the variables in 1.csv have much more predictive power.
 
   <p align="center">
-    <img src="https://github.com/PhoenixTMB/Analysis-of-Crime-within-London/blob/main/Images\Other_Plots\Correlation\CrimeRateCorrelationFinal.jpg" width = 800 height = 800>
+    <img src="Images/Other_Plots/Correlation/CrimeRateCorrelationFinal.jpg" width = 800 height = 800>
  </p>
 
  As we can see median income is now a solid predictor for all crimes except for vehicle crime however the relationship is inversely proportional to what we would expect. We and many others have always been taught to expect that low income would correlate to high crime, however our analysis tells a different story. We hypothesised why and came to the logical conclusion that thieves, burglars and robbers target wealthier areas thus raising crime rates in them. I.e the perpetrators of these crimes aren’t necessarily from the boroughs that they are committed in. Although not possible with current data, it could be interesting to do an analysis on crime committed within a borough by residents of said borough.
@@ -175,7 +175,7 @@ From this we can see that there is huge variation in. the number of crimes but w
  >Note: One issue that we found with the correlation matrix was that due to she size of the matrix and number of variables, many of the the correlation calculations are irrelevant and it is difficult to read. And therefore we edited the old matrix to display only the most relevant information.
 
   <p align="center">
-    <img src="https://github.com/PhoenixTMB/Analysis-of-Crime-within-London/blob/main/Images\Other_Plots\Correlation\CroppedCRCFinal.jpg" width = 700 height = 600>
+    <img src="Images/Other_Plots/Correlation/CroppedCRCFinal.jpg" width = 700 height = 600>
  </p>
 
  We can also see that population is yet again quite strongly negatively correlated with the different types of crime. However, reasoning would suggest that as population is a key factor in the calculation of crime rates, we sould see a strong relationship between the population of a borough and crime rates within the borough.
