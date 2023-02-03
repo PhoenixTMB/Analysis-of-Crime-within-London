@@ -39,13 +39,13 @@ This process was extremely time-consuming as we had to collect these coordinates
 This wasn’t a very easy form to work with so using our knowledge of pandas and data wrangling we managed to get each Data frame in the following form:
 
 <p align='center'>
-    <img src = 'Images/Other_Images/EDA_example2.png'>
+    <img src='Images/Other_Images/EDA_example2.png'>
 </p>
 
 We did this for each borough using the respective link we had created and merged the data frames since they all had the same index creating the whole dataset:
 
 <p align='center'>
-    <img src ='Images/Other_Images/dataset_snapshot.png' width = 800 height = 250>
+    <img src='Images/Other_Images/dataset_snapshot.png' width = 800 height = 250>
 </p>
 
 > Note: This is just a snapshot of the Data Frame – the real dataset is a lot larger
