@@ -39,7 +39,7 @@ This wasn’t a very easy form to work with so using our knowledge of pandas and
 </p>
 We did this for each borough using the respective link we had created and merged the data frames since they all had the same index creating the whole dataset:
 <p align='center'>
-    <img src ='Images/Other_Images/dataset_snapshot.png' width = 800 height = 250>
+    <img src ='Images/Other_Images/dataset_snapshot.png' width = 950 height = 200>
 </p>
 
 >Note: This is just a snapshot of the Data Frame – the real dataset is a lot larger
@@ -150,7 +150,7 @@ From this we can see that there is huge variation in. the number of crimes but w
 
  ### Correlation Analysis
   <p align="center">
-    <img src="Images/Other_Plots/Correlation/InitialCorrelationAnalysis.jpg" width = 800 height = 350>
+    <img src="Images/Other_Plots/Correlation/InitialCorrelationAnalysis.jpg" width = 800 height = 300>
  </p>
  
  >Note: This is just a snapshot of the Data Frame – the real dataset is a lot larger
