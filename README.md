@@ -32,16 +32,15 @@ The first step we had to take in collecting the data for this project was going 
 
 This process was extremely time-consuming as we had to collect these coordinates manually which became the largest challenge at the start of the project. What contributed to the time commitment of this process was that each coordinate had to be formatted in a specific way to fit the documentation of the API and for accuracy, we aimed for at least 15-20 points to capture the best shape of the borough. Once this step was complete and the links were made, the next step was converting the output to a JSON file and inputting the parameters we required, more specifically, the ‘Crime’ and ‘Category’ parameters which resulted in the following data frame. This is an example for Westminster:
 
-![1st image](https://github.com/PhoenixTMB/Analysis-of-Crime-within-London/blob/main/Images\Other_Images\EDA_example1.png)
+<p align="center">
+    <img src="https://github.com/PhoenixTMB/Analysis-of-Crime-within-London/blob/main/Images\Other_Images\EDA_example1.png" width = 800 height = 250>
+</p>
 
 This wasn’t a very easy form to work with so using our knowledge of pandas and data wrangling we managed to get each Data frame in the following form:
-
 <p align='center'>
-    <img src = 'https://github.com/PhoenixTMB/Analysis-of-Crime-within-London/blob/main/Images/Other_Images/EDA_example2.png'>
+    <img src = 'https://github.com/PhoenixTMB/Analysis-of-Crime-within-London/blob/main/Images/Other_Images/EDA_example2.png' width = 800 height = 250>
 <p>
-
 We did this for each borough using the respective link we had created and merged the data frames since they all had the same index creating the whole dataset:
-
 <p align='center'>
     <img src ='https://github.com/PhoenixTMB/Analysis-of-Crime-within-London/blob/main/Images/Other_Images/dataset_snapshot.png' width = 800 height = 250>
 <p>
