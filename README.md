@@ -112,7 +112,7 @@ From this we can see that there is huge variation in. the number of crimes but w
  To analyse this we created a plot to demonstrate the relationship between the total number of crimes in a borough and the boroughs travel zone.
 
   <p align="center">
-    <img src="https://github.com/PhoenixTMB/Analysis-of-Crime-within-London/blob/main/Images\Other_Plots\Centricity\crimes_travel_zone_graph.jpeg" width = 800 height = 800>
+    <img src="https://github.com/PhoenixTMB/Analysis-of-Crime-within-London/blob/main/Images\Other_Plots\Centricity\crimes_travel_zone_graph.jpeg" width = 800 height = 700>
  </p>
 
  As we can see there is actually no clear relationship found on this graph however, one confounding factor could be the relationship between population and centricity. Central areas such as City of London and City of Westminster have lower populations and we would expect them to have lower crime rate. However, if we were to look to crime rate as opposed to number of crimes, the data would likely tell a different story and this is an area for further exploration.
