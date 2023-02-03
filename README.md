@@ -111,7 +111,7 @@ From this we can see that there is huge variation in. the number of crimes but w
  In order to visualise the prevalence of crime in each borough, we decided to use a geographical visualisation called a choropleth map. Doing this meant finding a GEOJson file with the boundaries of the London boroughs. We then created identifiers for each borough which corresponded to their boundary co-ordinates within the GEOJson. To create this we used Plotly’s choropleth function and analysed the data to find a midpoint which would illustrate relatively safe areas (red) vs relatively dangerous areas (green). Below is an example of the heat map for total crime.
 
   <p align="center">
-    <img src="Images/Choropleth/Website_Choros/TotalCrimeChoroFinal.jpg" width = 800 height = 800>
+    <img src="Images/Choropleth/Website_Choros/TotalCrimeChoroFinal.jpg" width = 800 height = 750>
  </p>
 
  >Note: An interactive example which displays borough names can be found by locating the output.html file in this repository with location: Images / Interactive_Map /output.html.
@@ -121,7 +121,7 @@ From this we can see that there is huge variation in. the number of crimes but w
  We would expect that as the population of a borough increases, ceteris paribus, the crime rate will increase. We therefore realised that we actually need to calculate the rate of each crime adjusting for population. To do this we used pandas to add columns to the dataframe “df3” with the rates of each crime. We then recreated the choropleth maps and got an interesting result.
 
   <p align="center">
-    <img src="Images/Choropleth/Website_Choros/CrimeRateChoro.jpg" width = 800 height = 800>
+    <img src="Images/Choropleth/Website_Choros/CrimeRateChoro.jpg" width = 800 height = 750>
  </p>
 
  ### What can we conclude from choropleth maps
@@ -133,7 +133,7 @@ From this we can see that there is huge variation in. the number of crimes but w
  To analyse this we created a plot to demonstrate the relationship between the total number of crimes in a borough and the boroughs travel zone.
 
   <p align="center">
-    <img src="Images/Other_Plots/Centricity/crimes_travel_zone_graph.jpeg" width = 800 height = 700>
+    <img src="Images/Other_Plots/Centricity/crimes_travel_zone_graph.jpeg" width = 900 height = 650>
  </p>
 
  As we can see there is actually no clear relationship found on this graph however, one confounding factor could be the relationship between population and centricity. Central areas such as City of London and City of Westminster have lower populations and therefore we would expect them to have a higher crime rate. However, if we were to look to crime rate as opposed to number of crimes, the data would likely tell a different story and this is an area for further exploration.
