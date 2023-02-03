@@ -75,7 +75,27 @@ Alongside this, we wanted concrete summary statistics which we gained using the 
 >- 75% - 3077
 >- max - 4326
 
-From this we can see that there is huge variation in. the number of crimes but with the majority in the 1500 to 3000 range. This is likewise demonstrated by the standard deviation of 1006 with values taking a range of 3736. For the other relevant variables broken down by crime category, the distribution will be shown in the heat maps below.
+From this we can see that there is huge variation in. the number of crimes but with the majority in the 1500 to 3000 range. This is likewise demonstrated by the standard deviation of 1006 with values taking a range of 3736. For the other relevant variables broken down by crime category, the distribution will be shown in the heat maps below. And for some key variables, we have made a table.
+
+### Range and distribution of other key variables
+| Variable    | Std.dev     | Mean         | Range        |
+|-------------|-------------|--------------|--------------|
+|Median Income|11,893       |34,051        |70,419        |
+|Population   |75,871       |271,576       |386,175       |   
+|Crime Rate   |1.06         |1.04          |6.38          |
+
+### Size and shape of our final data set
+>- Our final data set has 35 columns (14 pertaining to crime, 14 pertaining to crime rate, 7 pertaining to socioeconomic factors) and 33 Rows (32 Boroughs + City of London)
+
+>- Ignoring Indices and Column titles our data set has 1,155 elements
+
+>- Given the similarity between rows and columns, the dataset's shape is almost square, however as the number of rows does not equal the number of columns, the dataset is rectangular
+
+### Size of individual datasets
+>- df2 has 33 rows and 7 columns
+>- maindft has 33 rows and 16 columns
+
+>Note: Due to the amount of columns of the dataset, the output was often collapsed.
 
  # Data Analysis
  ## Background
@@ -132,6 +152,7 @@ From this we can see that there is huge variation in. the number of crimes but w
     <img src="https://github.com/PhoenixTMB/Analysis-of-Crime-within-London/blob/main/Images\Other_Plots\Correlation\InitialCorrelationAnalysis.jpg" width = 800 height = 400>
  </p>
  
+ >Note: This is just a snapshot of the Data Frame – the real dataset is a lot larger
 
  To gain even further insight, we decided to create a correlation matrix heatmap using seaborn, and we discovered that out of the factors listed in the file 1.csv, the only factor that had predictive power over crimes committed was population as can be seen below.
 
