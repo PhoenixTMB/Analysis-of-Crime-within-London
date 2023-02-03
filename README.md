@@ -150,7 +150,7 @@ From this we can see that there is huge variation in. the number of crimes but w
 
  ### Correlation Analysis
   <p align="center">
-    <img src="Images/Other_Plots/Correlation/InitialCorrelationAnalysis.jpg" width = 800 height = 400>
+    <img src="Images/Other_Plots/Correlation/InitialCorrelationAnalysis.jpg" width = 800 height = 350>
  </p>
  
  >Note: This is just a snapshot of the Data Frame – the real dataset is a lot larger
