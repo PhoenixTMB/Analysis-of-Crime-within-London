@@ -64,7 +64,7 @@ The values of which ranged from 1 weapon possession in Harrow, to 1173 violent c
     <img src="https://github.com/PhoenixTMB/Analysis-of-Crime-within-London/blob/main/Images/Other_Plots/agg_plot.png" width = 800 height = 800>
 </p>
 
-Alongside this, we wanted concrete summary statistics which we gained using the describe() function in python to get the following:
+Alongside this, we wanted concrete summary statistics which we gained using the describe() function in python to get the following summary stats for total crime across each borough:
 
 >- count - 33
 >- mean - 2337.515152
@@ -135,7 +135,7 @@ From this we can see that there is huge variation in. the number of crimes but w
     <img src="https://github.com/PhoenixTMB/Analysis-of-Crime-within-London/blob/main/Images\Other_Plots\Centricity\crimes_travel_zone_graph.jpeg" width = 800 height = 700>
  </p>
 
- As we can see there is actually no clear relationship found on this graph however, one confounding factor could be the relationship between population and centricity. Central areas such as City of London and City of Westminster have lower populations and we would expect them to have lower crime rate. However, if we were to look to crime rate as opposed to number of crimes, the data would likely tell a different story and this is an area for further exploration.
+ As we can see there is actually no clear relationship found on this graph however, one confounding factor could be the relationship between population and centricity. Central areas such as City of London and City of Westminster have lower populations and therefore we would expect them to have a higher crime rate. However, if we were to look to crime rate as opposed to number of crimes, the data would likely tell a different story and this is an area for further exploration.
 
  ### Scatter Plots
 
