@@ -78,6 +78,7 @@ Alongside this, we wanted concrete summary statistics which we gained using the 
 From this we can see that there is huge variation in. the number of crimes but with the majority in the 1500 to 3000 range. This is likewise demonstrated by the standard deviation of 1006 with values taking a range of 3736. For the other relevant variables broken down by crime category, the distribution will be shown in the heat maps below. And for some key variables, we have made a table.
 
 ### Range and distribution of other key variables
+
 | Variable    | Std.dev     | Mean         | Range        |
 |-------------|-------------|--------------|--------------|
 |Median Income|11,893       |34,051        |70,419        |
