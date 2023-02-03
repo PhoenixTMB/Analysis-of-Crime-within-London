@@ -86,6 +86,7 @@ From this we can see that there is huge variation in. the number of crimes but w
 |Crime Rate   |1.06         |1.04          |6.38          |
 
 ### Size and shape of our final data set
+
 >- Our final data set has 35 columns (14 pertaining to crime, 14 pertaining to crime rate, 7 pertaining to socioeconomic factors) and 33 Rows (32 Boroughs + City of London)
 
 >- Ignoring Indices and Column titles our data set has 1,155 elements
@@ -100,6 +101,7 @@ From this we can see that there is huge variation in. the number of crimes but w
 >Note: Due to the amount of columns of the dataset, the output was often collapsed.
 
  # Data Analysis
+ 
  ## Background
 
  To give some background we initially conducted research about the different factors that affect crime urban areas. Through our research we found that there are many factors that affect crime all  to varying degrees, including inequality, age demographics, economic issues and proximity to metropolitan areas. We felt as though this analysis would be particularly useful to economists and geographers, alongside civilians who are interested in moving to a safe area. Therefore, we chose to analyse variables such as centricity, population and income factors alongside a few others. We used pandas to transpose the initial dataframe and then merged the csv file with the transposed dataframe using .read_csv and the pandas merge function. This combined dataframe is called "df3".
@@ -107,6 +109,7 @@ From this we can see that there is huge variation in. the number of crimes but w
  Some issues to consider are that our data only considers one month, and fluctuations may happen between crime rates depending on the time of year so our analysis may not be wholly reflective. In addition to this, our data was sourced from different data sources and from different times. Incomes and house prices are very dynamic variables so the data that we have sourced for analysis may yield some results that are not wholly relevant today.
 
  ## Overview of Plots
+ 
  ### Choropleth Maps
 
  In order to visualise the prevalence of crime in each borough, we decided to use a geographical visualisation called a choropleth map. Doing this meant finding a GEOJson file with the boundaries of the London boroughs. We then created identifiers for each borough which corresponded to their boundary co-ordinates within the GEOJson. To create this we used Plotly’s choropleth function and analysed the data to find a midpoint which would illustrate relatively safe areas (red) vs relatively dangerous areas (green). Below is an example of the heat map for total crime.
