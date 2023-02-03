@@ -124,7 +124,7 @@ Some issues to consider are that our data only considers one month, and fluctuat
 In order to visualise the prevalence of crime in each borough, we decided to use a geographical visualisation called a choropleth map. Doing this meant finding a GEOJson file with the boundaries of the London boroughs. We then created identifiers for each borough which corresponded to their boundary co-ordinates within the GEOJson. To create this we used Plotly’s choropleth function and analysed the data to find a midpoint which would illustrate relatively safe areas (red) vs relatively dangerous areas (green). Below is an example of the heat map for total crime.
 
 <p align="center">
-    <img src="Image/Choropleth/Website_Choros/TotalCrimeChoroFinal.jpg" width = 800 height = 800>
+    <img src="Images/Choropleth/Website_Choros/TotalCrimeChoroFinal.jpg" width = 800 height = 800>
 </p>
 
 > Note: An interactive example which displays borough names can be found by locating the output.html file in this repository with location: Images /
