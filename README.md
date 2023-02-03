@@ -1,8 +1,10 @@
 # Analysis-of-Crime-within-London
+
 A detailed investigation into the distribution of crime and crime sub-categories within London
 # Exploring Crime Distribution in London:
 
 ## Executive Summary:
+
 The focus of this project was to investigate the distribution of crime across London and more specifically across the 32 inner and outer boroughs of London to see which areas and therefore residents are most likely to experience certain crimes in their area. Our initial framing for this project was to help students like us, navigate an unfamiliar landscape but also for potential investors setting up offices or for families buying properties to be fully aware of the area they are buying into. Especially as property prices continue to rise relentlessly, it is becoming increasingly difficult to judge the quality of the area through property prices alone, so we hope our visualisation can paint the full picture. Crime in London in becoming increasing topical since the rise of knife crime and other violent crime since the beginning of the last decade. We ultimately hope our project can help increase awareness of crime prone areas and thus increase people’s safety.   
 
 For this project we collected 14 categories crime data from all 32 Boroughs using the London Metropolitan Police Crime API for 2021. Our resulting dataset contained just under 74,000 data points which we had to wrangle to make presentable using knowledge of pandas. Our exploratory analysis and visualisations provided both surprising and non-surprising insights we sought to rationalise through further research.
@@ -86,6 +88,7 @@ From this we can see that there is huge variation in. the number of crimes but w
 |Crime Rate   |1.06         |1.04          |6.38          |
 
 ### Size and shape of our final data set
+
 >- Our final data set has 35 columns (14 pertaining to crime, 14 pertaining to crime rate, 7 pertaining to socioeconomic factors) and 33 Rows (32 Boroughs + City of London)
 
 >- Ignoring Indices and Column titles our data set has 1,155 elements
@@ -100,6 +103,7 @@ From this we can see that there is huge variation in. the number of crimes but w
 > Note: Due to the amount of columns of the dataset, the output was often collapsed.
 
 # Data Analysis
+
 ## Background
 
 To give some background we initially conducted research about the different factors that affect crime urban areas. Through our research we found that there are many factors that affect crime all  to varying degrees, including inequality, age demographics, economic issues and proximity to metropolitan areas. We felt as though this analysis would be particularly useful to economists and geographers, alongside civilians who are interested in moving to a safe area. Therefore, we chose to analyse variables such as centricity, population and income factors alongside a few others. We used pandas to transpose the initial dataframe and then merged the csv file with the transposed dataframe using .read_csv and the pandas merge function. This combined dataframe is called "df3".
@@ -107,6 +111,7 @@ To give some background we initially conducted research about the different fact
 Some issues to consider are that our data only considers one month, and fluctuations may happen between crime rates depending on the time of year so our analysis may not be wholly reflective. In addition to this, our data was sourced from different data sources and from different times. Incomes and house prices are very dynamic variables so the data that we have sourced for analysis may yield some results that are not wholly relevant today.
 
 ## Overview of Plots
+
 ### Choropleth Maps
 
 In order to visualise the prevalence of crime in each borough, we decided to use a geographical visualisation called a choropleth map. Doing this meant finding a GEOJson file with the boundaries of the London boroughs. We then created identifiers for each borough which corresponded to their boundary co-ordinates within the GEOJson. To create this we used Plotly’s choropleth function and analysed the data to find a midpoint which would illustrate relatively safe areas (red) vs relatively dangerous areas (green). Below is an example of the heat map for total crime.
@@ -151,6 +156,7 @@ To visualise the relationships between different crimes and different socioecono
  As you can see, there is a positive correlation between the two factors. As data scientists though, we wanted to enumerate this information. Initially using numpy to calculate the correlations between variables we realised that this code was unnecessarily bulky and used pandas to create a correlation matrix.
 
 ### Correlation Analysis
+
 <p align="center">
     <img src="https://github.com/PhoenixTMB/Analysis-of-Crime-within-London/blob/main/Images\Other_Plots\Correlation\InitialCorrelationAnalysis.jpg" width = 800 height = 400>
 </p>
@@ -196,6 +202,7 @@ Given the level of interdependence between variables and confounding factors tha
 >- And if you have aichmophobia avoid Croydon (30 instances of possession of weapons) and instead settle in Harrow (1 instance of possession of weapons).
 
 # Contributions
+
 Website: Jaden Mighten and Tom Baldwin
 
 Managing Github: Jaden Mighten and Tom Baldwin
