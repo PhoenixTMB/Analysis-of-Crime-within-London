@@ -1,5 +1,7 @@
+#We chose to save our plots as opposed to displaying them in the terminal as this was slowing down
+#our process. However, if you want to see the plots simply state the "name of the plot".show()
 #importing libraries
-#code is designed to run in colab as seen in line 11
+#code is designed to run in colab as seen in line 17
 #2 files are required to run this code
 #File number one is 2.json found in: Co-ordinates -> GeoJson_for_choroplethmaps -> 2.json
 #File number two is 1.csv found in: CSV files -> Hard-Coded_CSVs -> 1.csv
@@ -96,7 +98,7 @@ waltham_forest_base_url = 'https://data.police.uk/api/outcomes-at-location?poly=
 waltham_forest_resp = requests.get(waltham_forest_base_url)
 
 #-------------------------------------------------
-print("!")
+
 #for the purpose of the loop i compiled all the urls into a list along with all the names in the same order
 urls = [westminster_base_url, city_base_url, ken_chel_base_url, ham_ful_base_url, wandsworth_base_url, lambeth_base_url, southwark_base_url, tow_ham_base_url, hackney_base_url, islington_base_url, camden_base_url, ealing_base_url, hounslow_base_url, bromley_base_url, croydon_base_url, lewisham_base_url, bexley_base_url, greenwich_base_url,   havering_base_url, bark_dag_base_url, enfield_base_url, barnet_base_url, haringey_base_url, harrow_base_url, brent_base_url, hillingdon_base_url, kingston_upon_thames_base_url, merton_base_url, newham_base_url, redbridge_base_url, richmond_upon_thames_base_url, sutton_base_url, waltham_forest_base_url]
 names = ['Westminster', 'City of London', 'Kensington and Chelsea', 'Hammersmith and Fulham', 'Wandsworth', 'Lambeth', 'Southwark', 'Tower Hamlets', 'Hackney', 'Islington', 'Camden', 'Ealing', 'Hounslow', 'Bromley', 'Croydon', 'Lewisham', 'Bexley', 'Greenwich', 'Havering', 'Barking and Dagenham', 'Enfield', 'Barnet', 'Haringey', 'Harrow', 'Brent', 'Hillingdon', 'Kingston upon Thames', 'Merton', 'Newham', 'Redbridge', 'Richmond upon Thames', 'Sutton', 'Waltham Forest']
@@ -109,7 +111,7 @@ westminster_json = westminster_resp.json()
 n_westminster = len(westminster_json)
 
 crime_westminster = []
-print("!")
+
 for i in range(0,n_westminster):
   crime_name = westminster_json[i]['crime']['category']
   crime_westminster.append(crime_name)
@@ -118,7 +120,7 @@ maindf = pd.pivot_table(maindf, index=['Crime'],values=[str(names[0])],aggfunc='
 maindf.loc['Total crime']= maindf.sum()
 maindf.loc['Borough'] = names[0]
 print(maindf)
-print("!")
+#Printed start of data frame just to check everything is working
 #Added a try except loop in the while loop as sometimes the api does not respond the first response
 p = len(urls)
 Totalcrimelist= [] 
@@ -144,9 +146,9 @@ while k <= p-1:
     df.loc['Borough'] = names[k]
     maindf = maindf.join(df)
     k= k+1
-  
+  #Print total crime to check code is working
 
-#Creating a list of total crimes from maindf to be appended to df2 (No longer necessary but keeping)
+#Creating a list of total crimes from maindf to be appended to df2 (No longer necessary but keeping for calculations)
 v=int(0)
 TCF= []
 while v<33:
@@ -156,25 +158,13 @@ while v<33:
 
                   #Data wrangling
 #--------------------------------------------------------------------------------------------
-#Dataframe creating a random column full of nothing
+#Dataframe creating a random column full of nothing so dropping
 maindfs=maindf.drop("")
 main_csv = maindfs.to_csv('main_data.csv')
 #transposing data set so it can be transposed with demographic data
 maindft = maindfs.transpose() 
 #Converting strings to integers
-maindft['bicycle-theft'] = maindft['bicycle-theft'].astype('int')
-maindft['burglary'] = maindft['burglary'].astype('int')
-maindft['criminal-damage-arson'] = maindft['criminal-damage-arson'].astype('int')
-maindft['drugs'] = maindft['drugs'].astype('int')
-maindft['other-crime'] = maindft['other-crime'].astype('int')
-maindft['other-theft'] = maindft['other-theft'].astype('int')
-maindft['possession-of-weapons'] = maindft['possession-of-weapons'].astype('int')
-maindft['public-order'] = maindft['public-order'].astype('int')
-maindft['robbery'] = maindft['robbery'].astype('int')
-maindft['shoplifting'] = maindft['shoplifting'].astype('int')
-maindft['theft-from-the-person'] = maindft['theft-from-the-person'].astype('int')
-maindft['vehicle-crime'] = maindft['vehicle-crime'].astype('int')
-maindft['violent-crime'] = maindft['violent-crime'].astype('int')
+maindft[['bicycle-theft','burglary','criminal-damage-arson','drugs','other-crime','other-theft','possession-of-weapons','public-order','robbery','shoplifting','theft-from-the-person','vehicle-crime','violent-crime']] = maindft[['bicycle-theft','burglary','criminal-damage-arson','drugs','other-crime','other-theft','possession-of-weapons','public-order','robbery','shoplifting','theft-from-the-person','vehicle-crime','violent-crime']].apply(pd.to_numeric)
 
 #Placing borough as the first column to get the intended merge effect
 firstcolumn=maindft.pop('Borough')
@@ -185,12 +175,17 @@ maindft.style.hide_index()
 df2 = pd.read_csv('1.csv')
 #Creating a total crime column in the dataframe
 df2['Total Crime'] = TCF
-#Converting string values to numerical calues
+#Converting string values to numerical values
 df2[['Median Income', 'House Price', 'Years to Purchase a House on Median Income','Population','Area','Population density']] = df2[['Median Income', 'House Price', 'Years to Purchase a House on Median Income','Population','Area','Population density']].apply(pd.to_numeric)
 #Creating Column with crime rate
 df2['Crime Rate']=(df2['Total Crime']/df2['Population'])*100
 #Merging dataframes so that data is all in the same place for visualisation
 df3=pd.merge(maindft, df2, on="Borough")
+
+#Remove the following 3 hashtags if you want to generate crime rate seaborn plot as opposed to crime count seaborn plot
+#df3[['bicycle-theft','burglary','criminal-damage-arson','drugs','other-crime','other-theft','possession-of-weapons','public-order','robbery','shoplifting','theft-from-the-person','vehicle-crime','violent-crime']]=df3[['bicycle-theft','burglary','criminal-damage-arson','drugs','other-crime','other-theft','possession-of-weapons','public-order','robbery','shoplifting','theft-from-the-person','vehicle-crime','violent-crime']].div(df3.Population, axis=0)
+#df3[['bicycle-theft rate','burglary rate','criminal-damage-arson rate','drugs rate','other-crime rate','other-theft rate','possession-of-weapons rate','public-order rate','robbery rate','shoplifting rate','theft-from-the-person rate','vehicle-crime rate','violent-crime rate']]=(df3[['bicycle-theft','burglary','criminal-damage-arson','drugs','other-crime','other-theft','possession-of-weapons','public-order','robbery','shoplifting','theft-from-the-person','vehicle-crime','violent-crime']])*100
+#df3[['bicycle-theft','burglary','criminal-damage-arson','drugs','other-crime','other-theft','possession-of-weapons','public-order','robbery','shoplifting','theft-from-the-person','vehicle-crime','violent-crime']]=df3[['bicycle-theft','burglary','criminal-damage-arson','drugs','other-crime','other-theft','possession-of-weapons','public-order','robbery','shoplifting','theft-from-the-person','vehicle-crime','violent-crime']]=df3[['bicycle-theft','burglary','criminal-damage-arson','drugs','other-crime','other-theft','possession-of-weapons','public-order','robbery','shoplifting','theft-from-the-person','vehicle-crime','violent-crime']]=df3[['bicycle-theft','burglary','criminal-damage-arson','drugs','other-crime','other-theft','possession-of-weapons','public-order','robbery','shoplifting','theft-from-the-person','vehicle-crime','violent-crime']].astype(str)
 
                       #Setting up for choropleth maps
 #----------------------------------------------------------------------------------------------------------------------------
@@ -425,3 +420,5 @@ def plotcorr():
 #eplot()
 #Correlation Matrix
 #corrplot()
+#Seaborn plot
+#plotcorr

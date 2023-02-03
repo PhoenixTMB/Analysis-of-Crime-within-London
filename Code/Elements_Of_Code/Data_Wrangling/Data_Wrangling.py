@@ -20,19 +20,7 @@ main_csv = maindfs.to_csv('main_data.csv')
 #transposing data set so it can be transposed with demographic data
 maindft = maindfs.transpose() 
 #Converting strings to integers
-maindft['bicycle-theft'] = maindft['bicycle-theft'].astype('int')
-maindft['burglary'] = maindft['burglary'].astype('int')
-maindft['criminal-damage-arson'] = maindft['criminal-damage-arson'].astype('int')
-maindft['drugs'] = maindft['drugs'].astype('int')
-maindft['other-crime'] = maindft['other-crime'].astype('int')
-maindft['other-theft'] = maindft['other-theft'].astype('int')
-maindft['possession-of-weapons'] = maindft['possession-of-weapons'].astype('int')
-maindft['public-order'] = maindft['public-order'].astype('int')
-maindft['robbery'] = maindft['robbery'].astype('int')
-maindft['shoplifting'] = maindft['shoplifting'].astype('int')
-maindft['theft-from-the-person'] = maindft['theft-from-the-person'].astype('int')
-maindft['vehicle-crime'] = maindft['vehicle-crime'].astype('int')
-maindft['violent-crime'] = maindft['violent-crime'].astype('int')
+maindft[['bicycle-theft','burglary','criminal-damage-arson','drugs','other-crime','other-theft','possession-of-weapons','public-order','robbery','shoplifting','theft-from-the-person','vehicle-crime','violent-crime']] = maindft[['bicycle-theft','burglary','criminal-damage-arson','drugs','other-crime','other-theft','possession-of-weapons','public-order','robbery','shoplifting','theft-from-the-person','vehicle-crime','violent-crime']].apply(pd.to_numeric)
 
 #Placing borough as the first column to get the intended merge effect
 firstcolumn=maindft.pop('Borough')
