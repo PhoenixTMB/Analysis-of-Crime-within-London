@@ -61,7 +61,7 @@ Our main data set contains all the crimes divided into each category used by the
 The values of which ranged from 1 weapon possession in Harrow, to 1173 violent crimes in Greenwich. But to gauge the data from a more “macro” perspective we decided to explore the aggregate data for all 33 boroughs instead of completing plots for the crime categories since we thought the best way to explore this data would be through visualising using a heat map. So, focusing on the aggregate statistics, we created this ordered bar graph to show the number of crimes per borough in one month:
 
 <p align="center">
-    <img src="https://github.com/PhoenixTMB/Analysis-of-Crime-within-London/blob/main/Images/Other_Plots/agg_plot.png" width = 800 height = 800>
+    <img src="https://github.com/PhoenixTMB/Analysis-of-Crime-within-London/blob/main/Images/Other_Plots/Aggregation/agg_plot.png" width = 800 height = 800>
 </p>
 
 Alongside this, we wanted concrete summary statistics which we gained using the describe() function in python to get the following summary stats for total crime across each borough:
