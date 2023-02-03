@@ -30,7 +30,7 @@ The first step we had to take in collecting the data for this project was going 
 This process was extremely time-consuming as we had to collect these coordinates manually which became the largest challenge at the start of the project. What contributed to the time commitment of this process was that each coordinate had to be formatted in a specific way to fit the documentation of the API and for accuracy, we aimed for at least 15-20 points to capture the best shape of the borough. Once this step was complete and the links were made, the next step was converting the output to a JSON file and inputting the parameters we required, more specifically, the ‘Crime’ and ‘Category’ parameters which resulted in the following data frame. This is an example for Westminster:
 
 <p align="center">
-    <img src="https://github.com/PhoenixTMB/Analysis-of-Crime-within-London/blob/main/Images/Other_Images/EDA_example1.png">
+    <img src="https://github.com/PhoenixTMB/Analysis-of-Crime-within-London/blob/main/Images/Other_Images/EDA_example1.PNG">
 </p>
 
 This wasn’t a very easy form to work with so using our knowledge of pandas and data wrangling we managed to get each Data frame in the following form:
