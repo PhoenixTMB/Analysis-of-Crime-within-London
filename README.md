@@ -129,7 +129,7 @@ From this we can see that there is huge variation in. the number of crimes but w
 
  ### Correlation Analysis
   <p align="center">
-    <img src="https://github.com/PhoenixTMB/Analysis-of-Crime-within-London/blob/main/Images\Other_Plots\Correlation\InitialCorrelationAnalysis.jpg" width = 800 height = 800>
+    <img src="https://github.com/PhoenixTMB/Analysis-of-Crime-within-London/blob/main/Images\Other_Plots\Correlation\InitialCorrelationAnalysis.jpg" width = 800 height = 600>
  </p>
  
 
@@ -154,7 +154,7 @@ From this we can see that there is huge variation in. the number of crimes but w
  >Note: One issue that we found with the correlation matrix was that due to she size of the matrix and number of variables, many of the the correlation calculations are irrelevant and it is difficult to read. And therefore we edited the old matrix to display only the most relevant information.
 
   <p align="center">
-    <img src="https://github.com/PhoenixTMB/Analysis-of-Crime-within-London/blob/main/Images\Other_Plots\Correlation\CroppedCRCFinal.jpg" width = 800 height = 800>
+    <img src="https://github.com/PhoenixTMB/Analysis-of-Crime-within-London/blob/main/Images\Other_Plots\Correlation\CroppedCRCFinal.jpg" width = 700 height = 600>
  </p>
 
  We can also see that population is yet again quite strongly negatively correlated with the different types of crime. However, reasoning would suggest that as population is a key factor in the calculation of crime rates, we sould see a strong relationship between the population of a borough and crime rates within the borough.
@@ -173,21 +173,37 @@ From this we can see that there is huge variation in. the number of crimes but w
 
  # Contributions
  Website: Jaden Mighten and Tom Baldwin
+
  Managing Github: Jaden Mighten and Tom Baldwin
+
  Initial data collection: Tom Baldwin
+
  Improving data collection code: Jaden Mighten
+
  Gathering Co-ordinates: Jaden Mighten and Tom Baldwin
+
  Cleaning Co-ordinates:Jaden Mighten and Tom Baldwin
+
  Creating API Links: Tom Baldwin
+
  Initial Data Wrangling: Tom Baldwin
+
  Main Data Wrangling:Jaden Mighten
+
  Box-Plots: Tom Baldwin
+
  Bar-Charts:Tom Baldwin
+
  Centricity Analysis:Tom Baldwin
+
  Choropleth Maps: Jaden Mighten
+
  Scatter Graphs: Jaden Mighten
+
  Correlation Analysis: Jaden Mighten
+
  Gathering GEOJSon file: Jaden Mighten
+
  Creating socioeconomic data CSV: Jaden Mighten
 
 
