@@ -129,7 +129,7 @@ From this we can see that there is huge variation in. the number of crimes but w
 
  ### Correlation Analysis
   <p align="center">
-    <img src="https://github.com/PhoenixTMB/Analysis-of-Crime-within-London/blob/main/Images\Other_Plots\Correlation\InitialCorrelationAnalysis.jpg" width = 800 height = 600>
+    <img src="https://github.com/PhoenixTMB/Analysis-of-Crime-within-London/blob/main/Images\Other_Plots\Correlation\InitialCorrelationAnalysis.jpg" width = 800 height = 400>
  </p>
  
 
