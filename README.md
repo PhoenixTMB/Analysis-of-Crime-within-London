@@ -5,16 +5,11 @@ A detailed investigation into the distribution of crime and crime sub-categories
 # Exploring Crime Distribution in London:
 
 ## Executive Summary:
-<<<<<<< Updated upstream
+
 The focus of this project was to investigate the distribution of crime across London and more specifically across the 32 inner and outer boroughs of London to see which areas and therefore residents are most likely to experience certain crimes in their area. Our initial framing for this project was to help students like us, navigate an unfamiliar landscape but also for potential investors setting up offices or for families buying properties to be fully aware of the area they are buying into. Especially as property prices continue to rise relentlessly, it is becoming increasingly difficult to judge the quality of the area through property prices alone, so we hope our visualisation can paint the full picture. Crime in London is becoming increasingly topical since the rise of knife crime and other violent crime since the beginning of the last decade. We ultimately hope our project can help increase awareness of crime prone areas and thus increase people’s safety.   
 
 For this project we collected 14 categories crime data from all 32 Boroughs + City of London using the London Metropolitan Police Crime API for 2021. Our resulting dataset contained just under 74,000 data points which we had to wrangle to make presentable using knowledge of pandas. Our exploratory analysis and visualisations provided both surprising and non-surprising insights we sought to rationalise through further research.
-=======
 
-The focus of this project was to investigate the distribution of crime across London and more specifically across the 32 inner and outer boroughs of London to see which areas and therefore residents are most likely to experience certain crimes in their area. Our initial framing for this project was to help students like us, navigate an unfamiliar landscape but also for potential investors setting up offices or for families buying properties to be fully aware of the area they are buying into. Especially as property prices continue to rise relentlessly, it is becoming increasingly difficult to judge the quality of the area through property prices alone, so we hope our visualisation can paint the full picture. Crime Distribution in London has become increasingly topical since the rise of knife crime and other violent crimes since the beginning of the last decade. We ultimately hope our project can help increase awareness of crime-prone areas and thus increase people’s safety.   
-
-For this project, we collected 13 categories of crime data from all 32 Boroughs using the London Metropolitan Police Crime API for 2021. Our resulting dataset contained just under 74,000 data points which we had to wrangle to make presentable using knowledge of pandas. Our exploratory analysis and visualisations provided both surprising and non-surprising insights we sought to rationalise through further research.
->>>>>>> Stashed changes
  
 ## Motivation
 
@@ -31,7 +26,6 @@ Moving beyond simply visualising the data, we can use the data we collect to fur
 
 This will push in the direction of drawing some conclusions as to what factors affect the crime rate the most and potentially help us pose some hypotheses as to why the crime is distributed the way it is.
 
-
 ## Data and Methodology:
 
 The first step we had to take in collecting the data for this project was going through the Met Police API documentation and figuring out which parts we had to use to get the results we needed. The first challenge we encountered was that the API was designed for more street-level outcomes rather than large areas. The API has a call limit for areas which contain more than 10,000 crimes. Luckily the areas that we wanted to cover did not exceed this limit since we were only focused on collecting data from the latest month available on the API which was December 2022. Using the API documentation, we realised had to create a polygon around each of the boroughs in London using latitude and longitude coordinates to separate the requests into their respective borough. 
@@ -39,32 +33,20 @@ The first step we had to take in collecting the data for this project was going 
 This process was extremely time-consuming as we had to collect these coordinates manually which became the largest challenge at the start of the project. What contributed to the time commitment of this process was that each coordinate had to be formatted in a specific way to fit the documentation of the API and for accuracy, we aimed for at least 15-20 points to capture the best shape of the borough. Once this step was complete and the links were made, the next step was converting the output to a JSON file and inputting the parameters we required, more specifically, the ‘Crime’ and ‘Category’ parameters which resulted in the following data frame. This is an example for Westminster:
 
 <p align="center">
-<<<<<<< Updated upstream
-    <img src="Images\Other_Images\EDA_example1.png">
-=======
     <img src="Images/Other_Images/EDA_example1.png">
->>>>>>> Stashed changes
 </p>
 
 This wasn’t a very easy form to work with so using our knowledge of pandas and data wrangling we managed to get each Data frame in the following form:
 
 <p align='center'>
-<<<<<<< Updated upstream
     <img src = 'Images/Other_Images/EDA_example2.png'>
 </p>
-=======
-    <img src='Images/Other_Images/EDA_example2.png'>
-</p>
 
->>>>>>> Stashed changes
+
 We did this for each borough using the respective link we had created and merged the data frames since they all had the same index creating the whole dataset:
 
 <p align='center'>
-<<<<<<< Updated upstream
     <img src ='Images/Other_Images/dataset_snapshot.png' width = 950 height = 200>
-=======
-    <img src='Images/Other_Images/dataset_snapshot.png' width = 800 height = 250>
->>>>>>> Stashed changes
 </p>
 
 > Note: This is just a snapshot of the Data Frame – the real dataset is a lot larger
@@ -105,10 +87,6 @@ From this, we can see that there is a huge variation in the number of crimes but
 
 ### Range and distribution of other key variables
 
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
 | Variable    | Std.dev     | Mean         | Range        |
 |-------------|-------------|--------------|--------------|
 |Median Income|11,893       |34,051        |70,419        |
@@ -118,14 +96,8 @@ From this, we can see that there is a huge variation in the number of crimes but
 
 ### Size and shape of our final data set
 
-<<<<<<< Updated upstream
->- Our final data set has 35 columns (14 pertaining to crime, 14 pertaining to crime rate, 7 pertaining to socioeconomic factors) and 33 Rows (32 Boroughs + City of London)
-=======
 >- Our final data set has 35 columns (14 pertaining to crime, 14 pertaining to the crime rate, and 7 pertaining to socioeconomic factors) and 33 Rows (32 Boroughs + City of London)
->>>>>>> Stashed changes
-
 >- Ignoring Indices and Column titles our data set has 1,155 elements
-
 >- Given the similarity between rows and columns, the dataset's shape is almost square, however as the number of rows does not equal the number of columns, the dataset is rectangular
 
 ### Size of individual datasets
@@ -136,40 +108,21 @@ From this, we can see that there is a huge variation in the number of crimes but
 > Note: Due to the number of columns of the dataset, the output was often collapsed.
 
 # Data Analysis
-
-<<<<<<< Updated upstream
- # Data Analysis
- 
- ## Background
-=======
 ## Background
->>>>>>> Stashed changes
+
 
 To give some background we initially researched the different factors that affect crime in urban areas. Through our research, we found that many factors affect crime all to varying degrees, including inequality, age demographics, economic issues and proximity to metropolitan areas. We felt as though this analysis would be particularly useful to economists and geographers, alongside civilians who are interested in moving to a safe area. Therefore, we chose to analyse variables such as centricity, population and income factors alongside a few others. We used pandas to transpose the initial data frame and then merged the CSV file with the transposed data frame using .read_csv and the pandas merge function. This combined data frame is called "df3".
 
 Some issues to consider are that our data only considers one month, and fluctuations may happen between crime rates depending on the time of year so our analysis may not be wholly reflective. In addition to this, our data was sourced from different data sources and at different times. Incomes and house prices are very dynamic variables so the data that we have sourced for analysis may yield some results that are not wholly relevant today.
 
-<<<<<<< Updated upstream
- ## Overview of Plots
- 
- ### Choropleth Maps
-=======
 ## Overview of Plots
->>>>>>> Stashed changes
-
 ### Choropleth Maps
 
-<<<<<<< Updated upstream
-  <p align="center">
-    <img src="Images/Choropleth/Website_Choros/TotalCrimeChoroFinal.jpg" width = 800 height = 750>
- </p>
-=======
 To visualise the prevalence of crime in each borough, we decided to use a geographical visualisation called a choropleth map. Doing this meant finding a GEOJson file with the boundaries of the London boroughs. We then created identifiers for each borough which corresponded to their boundary coordinates within the GEOJson. To create this we used Plotly’s choropleth function and analysed the data to find a midpoint which would illustrate relatively safe areas (red) vs relatively dangerous areas (green). Below is an example of the heat map for the total crime.
 
 <p align="center">
-    <img src="Images/Choropleth/Website_Choros/TotalCrimeChoroFinal.jpg" width = 800 height = 800>
+    <img src="Images/Choropleth/Website_Choros/TotalCrimeChoroFinal.jpg" width = 800 height = 750>
 </p>
->>>>>>> Stashed changes
 
 > Note: An interactive example which displays borough names can be found by locating the output.html file in this repository with the location: Images /
 Interactive_Map /output.html.
@@ -178,15 +131,10 @@ Interactive_Map /output.html.
 
 We would expect that as the population of a borough increases, ceteris paribus, the crime rate will increase. We, therefore, realised that we need to calculate the rate of each crime adjusting for population. To do this we used pandas to add columns to the data frame “df3” with the rates of each crime. We then recreated the choropleth maps and got an interesting result.
 
-<<<<<<< Updated upstream
-  <p align="center">
-    <img src="Images/Choropleth/Website_Choros/CrimeRateChoro.jpg" width = 800 height = 750>
- </p>
-=======
 <p align="center">
-    <img src="Images/Choropleth/Website_Choros/CrimeRateChoro.jpg" width = 800 height = 800>
+    <img src="Images/Choropleth/Website_Choros/CrimeRateChoro.jpg" width = 800 height = 750>
 </p>
->>>>>>> Stashed changes
+
 
 ### What can we conclude from choropleth maps
 
@@ -196,15 +144,10 @@ As we can see once we adjust for population differences, a completely different 
 
 To analyse this we created a plot to demonstrate the relationship between the total number of crimes in a borough and the borough's travel zone.
 
-<<<<<<< Updated upstream
-  <p align="center">
-    <img src="Images/Other_Plots/Centricity/crimes_travel_zone_graph.jpeg" width = 1000 height = 600>
- </p>
-=======
+
 <p align="center">
-    <img src="Images/Other_Plots/Centricity/crimes_travel_zone_graph.jpeg" width = 800 height = 700>
+    <img src="Images/Other_Plots/Centricity/crimes_travel_zone_graph.jpeg" width = 1000 height = 600>
 </p>
->>>>>>> Stashed changes
 
 As we can see there is no clear relationship found on this graph however, one confounding factor could be the relationship between population and centricity. Central areas such as the City of London and the City of Westminster have lower populations and therefore we would expect them to have a higher crime rate. However, if we were to look at the crime rate as opposed to the number of crimes, the data would likely tell a different story and this is an area for further exploration.
 
@@ -212,29 +155,14 @@ As we can see there is no clear relationship found on this graph however, one co
 
 To visualise the relationships between different crimes and different socioeconomic factors, we merged the data frame that we created “1.csv” (which contains information on demographics, incomes and house affordability) using Pandas. We used Plotnine to create the scatter graphs and here is an example of one of the graphs that we created. (Other graphs that we created did not show any clear relationship without enumeration of the degree of correlation).
 
-<<<<<<< Updated upstream
-  <p align="center">
-    <img src="Images/Scatter_Plots/PlotlyScatterForWebsite.jpg" width = 800 height = 800>
- </p>
 
- As you can see, there is a positive correlation between the two factors. As data scientists though, we wanted to enumerate this information. Initially using numpy to calculate the correlations between variables we realised that this code was unnecessarily bulky and used pandas to create a correlation matrix.
-
- ### Correlation Analysis
- 
-  <p align="center">
-    <img src="Images/Other_Plots/Correlation/InitialCorrelationAnalysis.jpg" width = 800 height = 300>
- </p>
- 
- >Note: This is just a snapshot of the Data Frame – the real dataset is a lot larger
-=======
 <p align="center">
     <img src="Images/Scatter_Plots/PlotlyScatterForWebsite.jpg" width = 800 height = 800>
 </p>
 
- As you can see, there is a positive correlation between the two factors. As data scientists though, we wanted to enumerate this information. Initially using numpy to calculate the correlations between variables we realised that this code was unnecessarily bulky and used pandas to create a correlation matrix.
+As you can see, there is a positive correlation between the two factors. As data scientists though, we wanted to enumerate this information. Initially using numpy calculate the correlations between variables we realised that this code was unnecessarily bulky and used pandas to create a correlation matrix.
 
 ### Correlation Analysis
->>>>>>> Stashed changes
 
 <p align="center">
     <img src="Images/Other_Plots/Correlation/InitialCorrelationAnalysis.jpg" width = 800 height = 400>
@@ -242,27 +170,15 @@ To visualise the relationships between different crimes and different socioecono
  
 > Note: This is just a snapshot of the Data Frame – the real dataset is a lot larger
 
-<<<<<<< Updated upstream
-  <p align="center">
-    <img src="Images/Other_Plots/Correlation/TotalCrimeCorrelationFinal.jpg" width = 800 height = 800>
- </p>
-=======
-To gain even further insight, we decided to create a correlation matrix heatmap using seaborn, and we discovered that out of the factors listed in the file 1.csv, the only factor that had predictive power over crimes committed was population as can be seen below.
->>>>>>> Stashed changes
-
 <p align="center">
     <img src="Images/Other_Plots/Correlation/TotalCrimeCorrelationFinal.jpg" width = 800 height = 800>
 </p>
 
+To gain even further insight, we decided to create a correlation matrix heatmap using seaborn, and we discovered that out of the factors listed in the file 1.csv, the only factor that had predictive power over crimes committed was population as can be seen below.
+
 We were surprised by the lack of correlation between income and crime and we pondered why this was the case. We then checked our code for issues and found none. Except for one thing…
 
-<<<<<<< Updated upstream
-  <p align="center">
-    <img src="Images/Other_Plots/Correlation/CrimeRateCorrelationFinal.jpg" width = 800 height = 800>
- </p>
-=======
 Yet again we realised that population is a clear confounding factor, so we remade the correlation matrix using the dataset with crime rates that we made for the choropleth maps and as you can see, the variables in 1.csv have much more predictive power.
->>>>>>> Stashed changes
 
 <p align="center">
     <img src="Images/Other_Plots/Correlation/CrimeRateCorrelationFinal.jpg" width = 800 height = 800>
@@ -272,13 +188,7 @@ As we can see median income is now a solid predictor for all crimes except for v
 
 Looking at this relationship in the context of our data, however, we see that areas such as the City of Westminster and the City of London are areas with very low populations, which mathematically should contribute to a high crime rate, but also high incomes. This means that these two data points among other unexplored data points could influence the degree of correlation. Removing these extreme data points in the future could allow for a more informative analysis.
 
-<<<<<<< Updated upstream
-  <p align="center">
-    <img src="Images/Other_Plots/Correlation/CroppedCRCFinal.jpg" width = 700 height = 600>
- </p>
-=======
 > Note: One issue that we found with the correlation matrix was that due to the size of the matrix and the number of variables, many of the correlation calculations are irrelevant and it is difficult to read. And therefore we edited the old matrix to display only the most relevant information.
->>>>>>> Stashed changes
 
 <p align="center">
     <img src="Images/Other_Plots/Correlation/CroppedCRCFinal.jpg" width = 700 height = 600>
@@ -296,13 +206,8 @@ Given the level of interdependence between variables and confounding factors tha
 
 >- If you’re looking to open a shop in London, avoid Richmond upon Thames and Bromley (309 and 301 instances of shoplifting respectively).
 
-<<<<<<< Updated upstream
- # Contributions
- 
- Website: Jaden Mighten and Tom Baldwin
-=======
 >- And if you have aichmophobia avoid Croydon (30 instances of possession of weapons) and instead settle in Harrow (1 instance of possession of weapons).
->>>>>>> Stashed changes
+
 
 # Contributions
 
