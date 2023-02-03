@@ -93,6 +93,7 @@ From this we can see that there is huge variation in. the number of crimes but w
 >- Given the similarity between rows and columns, the dataset's shape is almost square, however as the number of rows does not equal the number of columns, the dataset is rectangular
 
 ### Size of individual datasets
+
 >- df2 has 33 rows and 7 columns
 >- maindft has 33 rows and 16 columns
 
@@ -149,6 +150,7 @@ From this we can see that there is huge variation in. the number of crimes but w
  As you can see, there is a positive correlation between the two factors. As data scientists though, we wanted to enumerate this information. Initially using numpy to calculate the correlations between variables we realised that this code was unnecessarily bulky and used pandas to create a correlation matrix.
 
  ### Correlation Analysis
+ 
   <p align="center">
     <img src="Images/Other_Plots/Correlation/InitialCorrelationAnalysis.jpg" width = 800 height = 300>
  </p>
@@ -194,6 +196,7 @@ From this we can see that there is huge variation in. the number of crimes but w
  >- And if you have aichmophobia avoid Croydon (30 instances of possession of weapons) and instead settle in Harrow (1 instance of possession of weapons).
 
  # Contributions
+ 
  Website: Jaden Mighten and Tom Baldwin
 
  Managing Github: Jaden Mighten and Tom Baldwin
